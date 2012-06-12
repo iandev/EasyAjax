@@ -38,10 +38,10 @@ if(typeof jQuery != "undefined") {
 			
 			set: function (args) {
 				this.defaults.defaultContent 	= args.defaultContent 		|| this.defaults.defaultContent;
-				this.defaults.beforeRequest		= args.beforeRequest 		|| this.defaults.beforeRequest;
-				this.defaults.afterRequest 		= args.afterRequest 		|| this.defaults.afterRequest;
-				this.defaults.errorRequest 		= args.errorRequest 		|| this.defaults.errorRequest;
-				this.defaults.noResponse 		= args.noResponse 			|| this.defaults.noResponse;
+				this.defaults.beforeRequest	= args.beforeRequest 		|| this.defaults.beforeRequest;
+				this.defaults.afterRequest 	= args.afterRequest 		|| this.defaults.afterRequest;
+				this.defaults.errorRequest 	= args.errorRequest 		|| this.defaults.errorRequest;
+				this.defaults.noResponse 	= args.noResponse 		|| this.defaults.noResponse;
 			},
 			
 			init: function() {
