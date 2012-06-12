@@ -3,8 +3,8 @@
  Author: Ian Herbert
  Email: iant.herbert@gmail.com
  Version History:	Saturday June 21 2010 v0.8
-					Monday June 11 2012 v1.0
-					Tuesday June 12 2012 v1.2
+			Monday June 11 2012 v1.0
+			Tuesday June 12 2012 v1.2
  Usage:
 	easyAjax.init({
 		defaultContent: "",		// default element to display returned content, can be any jQuery selector
