@@ -153,8 +153,7 @@ if(typeof jQuery != "undefined") {
 							if(str != '0') {
 								if(typeof(target) != 'undefined') {
 									var t = unescape(target);
-									if(t != _private.defaults.noResponse)
-									{
+									if(t != _private.defaults.noResponse) {
 										$(t).html(str);
 									}
 								} else if(_private.defaults.defaultContent.length > 0) {
