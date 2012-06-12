@@ -84,24 +84,18 @@ if(typeof jQuery != "undefined") {
 				var d = $(this).serialize();
 				$("input[name=target]").attr("disabled", false);
 
-				if(this.method=="post")
-				{
+				if(this.method=="post") {
 					_private.defaults.data = d;
-				}
-				else
-				{
+				} else {
 					href = href + "?" +  d;
 				}
 					
-				if(typeof(t_val) != "undefined" && t_val.length > 0)
-				{
+				if(typeof(t_val) != "undefined" && t_val.length > 0) {
 					if(window.location.hash == "#?url=" + href + "&t=" + escape(t_val))
 						$(window).trigger( 'hashchange' );
 					else
 						window.location.hash = "?url=" + href + "&t=" + escape(t_val);
-				}
-				else
-				{
+				} else {
 					if(window.location.hash == "#?url=" + href)
 						$(window).trigger( 'hashchange' );
 					else
@@ -117,29 +111,23 @@ if(typeof jQuery != "undefined") {
 			
 			parseHash: function () {
 				var qry_loc = window.location.hash.indexOf("?");
-				if(qry_loc > -1)
-				{
+				if(qry_loc > -1) {
 					var qry = window.location.hash.substring(qry_loc+1);
 					
-					if(qry.indexOf("url=") > -1)
-					{
+					if(qry.indexOf("url=") > -1) {
 						var pieces = qry.split("url=");
-						if(pieces[1].length > 0)
-						{
-							if(pieces[1].indexOf("&t=") > -1)
-							{
+						if(pieces[1].length > 0) {
+							if(pieces[1].indexOf("&t=") > -1) {
 								var pieces2 = pieces[1].split("&t=");
 								
 								var url = pieces2[0];
 								var target = pieces2[1];
-							}
-							else
+							} else
 								var url = pieces[1];
 						}
 								
 							
-						if(typeof(url) != 'undefined')
-						{
+						if(typeof(url) != 'undefined') {
 							_private.getContent(url, target);
 						}
 					}
@@ -150,34 +138,26 @@ if(typeof jQuery != "undefined") {
 				if(typeof(_private.defaults.beforeRequest) == "function")
 					_private.defaults.beforeRequest(href);
 
-				jQuery.ajax(
-				{
+				jQuery.ajax({
 					type: "POST",
 					url: href,
 					data: _private.defaults.data,
 					dataType: "html",
-					error: function(XMLHttpRequest, textStatus, errorThrown)
-					{
+					error: function(XMLHttpRequest, textStatus, errorThrown) {
 						if(typeof(_private.defaults.errorRequest) == "function")
 							_private.defaults.errorRequest(textStatus, errorThrown);
 					},
 					
-					success: function(str)
-					{
-						if(str.length > 0) 
-						{
-							if(str != '0')
-							{
-								if(typeof(target) != 'undefined')
-								{
+					success: function(str) {
+						if(str.length > 0) {
+							if(str != '0') {
+								if(typeof(target) != 'undefined') {
 									var t = unescape(target);
 									if(t != _private.defaults.noResponse)
 									{
 										$(t).html(str);
 									}
-								}
-								else if(_private.defaults.defaultContent.length > 0)
-								{
+								} else if(_private.defaults.defaultContent.length > 0) {
 									$(_private.defaults.defaultContent).html(str);
 								}
 									
