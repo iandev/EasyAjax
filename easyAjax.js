@@ -75,7 +75,7 @@ if(typeof jQuery != "undefined") {
 			formSubmitEvent: function (e) {
 				e.preventDefault();
 
-				var href = this.action.replace(/^[^\/]*(?:\/[^\/]*){2}/, "");
+				var href = this.getAttribute('action').replace(/^[^\/]*(?:\/[^\/]*){2}/, "");
 				if(href.length == 0)
 					var href = "/";
 							
